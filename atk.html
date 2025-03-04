@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .table-container {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .table-row {
+            transition: all 0.3s ease;
+        }
+
+        .table-row:hover {
+            background-color: #f0f9ff;
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <!-- Phone Frame -->
+    <div
+        class="bg-white rounded-[3rem] shadow-xl w-full max-w-md h-[700px] overflow-hidden border-8 border-gray-800 relative">
+        <!-- Dynamic Island -->
+        <div
+            class="absolute top-2 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-[20px] flex items-center justify-center z-10">
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span class="text-white text-xs">9:41</span>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="bg-black pt-10 pb-2 px-4 flex justify-between items-center text-white">
+            <div class="text-sm">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi ml-1"></i>
+            </div>
+            <div class="text-sm">
+                <i class="fas fa-battery-full"></i>
+                <span class="ml-1">100%</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="bg-blue-500 p-4 text-white shadow-md flex items-center">
+            <button onclick="window.location.href='produk-detail.html'"
+                class="text-white hover:bg-blue-600 rounded-full p-2 transition">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="text-xl font-bold text-center flex-1">Produk ATK</h1>
+        </div>
+
+        <!-- Table Container -->
+        <div class="h-[500px] overflow-y-auto p-4">
+            <div class="table-container bg-white rounded-xl shadow-md overflow-hidden">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-gray-50 text-gray-600">
+                            <th class="py-3 px-4 text-left font-semibold">Nama</th>
+                            <th class="py-3 px-4 text-center font-semibold">Satuan</th>
+                            <th class="py-3 px-4 text-right font-semibold">Harga Jual</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr class="table-row">
+                            <td class="py-3 px-4">ATK Buku Besar Akutansi 100Lembar</td>
+                            <td class="py-3 px-4 text-center">pcs</td>
+                            <td class="py-3 px-4 text-right">20.000</td>
+                        </tr>
+                        <tr class="table-row bg-gray-50">
+                            <td class="py-3 px-4">ATK joyko bulpen BP-207</td>
+                            <td class="py-3 px-4 text-center">pcs</td>
+                            <td class="py-3 px-4 text-right">3.000</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-3 px-4">ATK Joyko Ct-522 Tape Correction</td>
+                            <td class="py-3 px-4 text-center">pcs</td>
+                            <td class="py-3 px-4 text-right">6.000</td>
+                        </tr>
+                        <tr class="table-row bg-gray-50">
+                            <td class="py-3 px-4">ATK Joyko jk-100nt</td>
+                            <td class="py-3 px-4 text-center">pcs</td>
+                            <td class="py-3 px-4 text-right">3.000</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-3 px-4">ATK Kenko Glue Stick</td>
+                            <td class="py-3 px-4 text-center">pcs</td>
+                            <td class="py-3 px-4 text-right">3.000</td>
+                        </tr>
+                        <tr class="table-row bg-gray-50">
+                            <td class="py-3 px-4">ATK Pulpen Carinex</td>
+                            <td class="py-3 px-4 text-center">pcs</td>
+                            <td class="py-3 px-4 text-right">3.000</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-3 px-4">ATK Pulpen Kokoro</td>
+                            <td class="py-3 px-4 text-center">pcs</td>
+                            <td class="py-3 px-4 text-right">6.000</td>
+                        </tr>
+                        <tr class="table-row bg-gray-50">
+                            <td class="py-3 px-4">ATK Serutan Kenko Sp362</td>
+                            <td class="py-3 px-4 text-center">pcs</td>
+                            <td class="py-3 px-4 text-right">1.000</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-3 px-4">Bodrexin Paracetamol Jeruk 60ml</td>
+                            <td class="py-3 px-4 text-center">pcs</td>
+                            <td class="py-3 px-4 text-right">15.000</td>
+                        </tr>
+                        <tr class="table-row bg-gray-50">
+                            <td class="py-3 px-4">Kalkulator Casio</td>
+                            <td class="py-3 px-4 text-center">pcs</td>
+                            <td class="py-3 px-4 text-right">150.000</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-3 px-4">Matrai 10.000</td>
+                            <td class="py-3 px-4 text-center">-</td>
+                            <td class="py-3 px-4 text-right">12.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Back Button -->
+            <div class="mt-4 flex justify-center">
+                <button onclick="window.location.href='produk-detail.html'"
+                    class="bg-blue-500 text-white py-2 px-6 rounded-full hover:bg-blue-600 transition flex items-center space-x-2">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Kembali</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
