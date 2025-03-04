@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .category-container {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .category-container:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .category-container:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .category-container:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .category-container:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .category-container:nth-child(5) {
+            animation-delay: 1.0s;
+        }
+
+        .table-row {
+            transition: all 0.3s ease;
+        }
+
+        .table-row:hover {
+            background-color: #f0f9ff;
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <!-- Phone Frame -->
+    <div
+        class="bg-white rounded-[3rem] shadow-xl w-full max-w-md h-[700px] overflow-hidden border-8 border-gray-800 relative">
+        <!-- Dynamic Island -->
+        <div
+            class="absolute top-2 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-[20px] flex items-center justify-center z-10">
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span class="text-white text-xs">9:41</span>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="bg-black pt-10 pb-2 px-4 flex justify-between items-center text-white">
+            <div class="text-sm">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi ml-1"></i>
+            </div>
+            <div class="text-sm">
+                <i class="fas fa-battery-full"></i>
+                <span class="ml-1">100%</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="bg-blue-500 p-4 text-white shadow-md flex items-center">
+            <button onclick="window.location.href='produk-detail.html'"
+                class="text-white hover:bg-blue-600 rounded-full p-2 transition">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="text-xl font-bold text-center flex-1">Jajanan</h1>
+        </div>
+
+        <!-- Content Container -->
+        <div class="h-[500px] overflow-y-auto p-4 space-y-6">
+            <!-- UMKM -->
+            <div class="category-container">
+                <h2 class="text-lg font-bold mb-2 text-gray-700">UMKM</h2>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-50 text-gray-600">
+                                <th class="py-3 px-4 text-left font-semibold">Nama</th>
+                                <th class="py-3 px-4 text-center font-semibold">Satuan</th>
+                                <th class="py-3 px-4 text-right font-semibold">Harga Jual</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="table-row">
+                                <td class="py-3 px-4">(Umkm) Aneka Roti</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">6.000</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">(Umkm) Cila Brownies Crispy</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">25.000</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">(Umkm) Cilok Polos</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">15.000</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">(Umkm) Cilok Urat Sapi</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">20.000</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">(Umkm) Krepik R</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">15.000</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">(Umkm) Krepik R Talas Pedas</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">17.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- AIR MINERAL -->
+            <div class="category-container">
+                <h2 class="text-lg font-bold mb-2 text-gray-700">AIR MINERAL</h2>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-50 text-gray-600">
+                                <th class="py-3 px-4 text-left font-semibold">Nama</th>
+                                <th class="py-3 px-4 text-center font-semibold">Satuan</th>
+                                <th class="py-3 px-4 text-right font-semibold">Harga Jual</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Air Mineral Ades 600ml</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">4.000</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Air Mineral Dutamas 600ml</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">4.000</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Air Mineral Nestle 330ml</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">2.500</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Air Mineral Prima 330 ml</td>
+                                <td class="py-3 px-4 text-center">Botol</td>
+                                <td class="py-3 px-4 text-right">1.500</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Air Mineral Vit 200 ml</td>
+                                <td class="py-3 px-4 text-center">Botol</td>
+                                <td class="py-3 px-4 text-right">1.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- KOPI -->
+            <div class="category-container">
+                <h2 class="text-lg font-bold mb-2 text-gray-700">KOPI</h2>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-50 text-gray-600">
+                                <th class="py-3 px-4 text-left font-semibold">Nama</th>
+                                <th class="py-3 px-4 text-center font-semibold">Satuan</th>
+                                <th class="py-3 px-4 text-right font-semibold">Harga Jual</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Caffino Coffe</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">2.500</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Good Day Capucino 25Gram</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">2.500</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Good Day Original 20 gr</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">1.500</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Good Day Original Capucino 250 Ml</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">7.000</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Kapal Api Spesial 350gram</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">33.000</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Kapal Api Spesial mix 25Gram</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">15.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- MINUMAN RASA -->
+            <div class="category-container">
+                <h2 class="text-lg font-bold mb-2 text-gray-700">MINUMAN RASA</h2>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-50 text-gray-600">
+                                <th class="py-3 px-4 text-left font-semibold">Nama</th>
+                                <th class="py-3 px-4 text-center font-semibold">Satuan</th>
+                                <th class="py-3 px-4 text-right font-semibold">Harga Jual</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Cimory 240ml</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">8.500</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Cimory 225ml</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">7.000</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Cimory 120gram</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">9.500</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Fruit Tea 350ml</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">5.000</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Ultra Milk Coklat 125 ml</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">3.500</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Ultra Milk Coklat 200 ml</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">5.500</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">You C1000 140ml</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">8.000</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">You C1000 500ml</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">8.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- JAJANAN KERING -->
+            <div class="category-container">
+                <h2 class="text-lg font-bold mb-2 text-gray-700">JAJANAN KERING</h2>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-50 text-gray-600">
+                                <th class="py-3 px-4 text-left font-semibold">Nama</th>
+                                <th class="py-3 px-4 text-center font-semibold">Satuan</th>
+                                <th class="py-3 px-4 text-right font-semibold">Harga Jual</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Garuda Crunchy Potato BBQ 50.2gram</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">10.000</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Garuda Kacang Atom 110gram</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">9.000</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Garuda Kacang Atom Pedas 220gram</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">18.000</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Garuda Kacang Kulit 160+85gram</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">17.000</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Kuaci Rebo Milk 150gr</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">15.000</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Nabati Nextar Bluebarry</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">3.000</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Qtela 55gram</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">6.500</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Pocky 40gram</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">8.000</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-3 px-4">Roma Malkis 30gram</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">7.000</td>
+                            </tr>
+                            <tr class="table-row bg-gray-50">
+                                <td class="py-3 px-4">Silverqueen Almonds 62 gram</td>
+                                <td class="py-3 px-4 text-center">pcs</td>
+                                <td class="py-3 px-4 text-right">16.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Back Button -->
+            <div class="mt-4 flex justify-center pb-4">
+                <button onclick="window.location.href='produk-detail.html'"
+                    class="bg-blue-500 text-white py-2 px-6 rounded-full hover:bg-blue-600 transition flex items-center space-x-2">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Kembali</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
