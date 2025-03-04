@@ -125,7 +125,7 @@
                             <div class="bg-gray-100 rounded-lg p-3 max-w-[80%] space-y-4">
                                 <p>Halo ${name} 👋, MinBot senang berkenalan dengan kamu. 😊</p>
                                 <p>Untuk memulai cukup tekan pilihan dibawah ini yaa!!</p>
-                                <button onclick="window.location.href='menu.html'" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition flex items-center">
+                                <button onclick="goToMenu()" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition flex items-center">
                                     🏠 Menu Utama
                                 </button>
                             </div>
@@ -142,6 +142,12 @@
                 // Scroll ke bawah
                 chatContainer.scrollTop = chatContainer.scrollHeight;
             }
+        }
+
+        function goToMenu() {
+            const nameInput = document.getElementById('nameInput');
+            const name = nameInput.value.trim();
+            window.location.href = 'menu.html?name=' + encodeURIComponent(name);
         }
 
         // Event listener untuk tombol Enter
