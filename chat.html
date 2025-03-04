@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom scrollbar */
+        .chat-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .chat-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+        }
+
+        /* Animasi chat */
+        .chat-bubble {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <!-- Phone Frame -->
+    <div
+        class="bg-white rounded-[3rem] shadow-xl w-full max-w-md h-[700px] overflow-hidden border-8 border-gray-800 relative">
+        <!-- Dynamic Island -->
+        <div
+            class="absolute top-2 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-[20px] flex items-center justify-center z-10">
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span class="text-white text-xs">9:41</span>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="bg-black pt-10 pb-2 px-4 flex justify-between items-center text-white">
+            <div class="text-sm">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi ml-1"></i>
+            </div>
+            <div class="text-sm">
+                <i class="fas fa-battery-full"></i>
+                <span class="ml-1">100%</span>
+            </div>
+        </div>
+
+        <!-- Chat Header -->
+        <div class="bg-blue-500 p-4 text-white shadow-md">
+            <h1 class="text-xl font-bold text-center">Chat Bot</h1>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-container h-[500px] overflow-y-auto p-4 space-y-4">
+            <!-- Bot Message -->
+            <div class="flex items-start space-x-2 mb-4 chat-bubble">
+                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                    M
+                </div>
+                <div class="bg-gray-100 rounded-lg p-3 max-w-[80%]">
+                    <p>Kenalan dulu yuk, Siapa nama kamu?</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="absolute bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200">
+            <div class="flex items-center space-x-2">
+                <div class="flex-1 bg-gray-100 rounded-full px-4 py-2 flex items-center">
+                    <input type="text" id="nameInput" placeholder="Ketik nama kamu..."
+                        class="bg-transparent w-full focus:outline-none">
+                </div>
+                <button onclick="sendName()"
+                    class="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-blue-600">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sendName() {
+            const nameInput = document.getElementById('nameInput');
+            const name = nameInput.value.trim();
+
+            if (name) {
+                // Menambahkan pesan user
+                const chatContainer = document.querySelector('.chat-container');
+                chatContainer.innerHTML += `
+                    <div class="flex justify-end mb-4 chat-bubble">
+                        <div class="bg-blue-500 rounded-lg p-3 max-w-[80%] text-white">
+                            <p>${name}</p>
+                        </div>
+                    </div>
+                `;
+
+                // Menambahkan respon bot
+                setTimeout(() => {
+                    chatContainer.innerHTML += `
+                        <div class="flex items-start space-x-2 mb-4 chat-bubble">
+                            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                                M
+                            </div>
+                            <div class="bg-gray-100 rounded-lg p-3 max-w-[80%] space-y-4">
+                                <p>Halo ${name} 👋, MinBot senang berkenalan dengan kamu. 😊</p>
+                                <p>Untuk memulai cukup tekan pilihan dibawah ini yaa!!</p>
+                                <button onclick="window.location.href='menu.html'" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition flex items-center">
+                                    🏠 Menu Utama
+                                </button>
+                            </div>
+                        </div>
+                    `;
+
+                    // Scroll ke bawah
+                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                }, 1000);
+
+                // Clear input
+                nameInput.value = '';
+
+                // Scroll ke bawah
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+        }
+
+        // Event listener untuk tombol Enter
+        document.getElementById('nameInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendName();
+            }
+        });
+    </script>
+</body>
+
+</html>
