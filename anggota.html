@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .chat-bubble {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-bubble:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        .chat-bubble:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+
+        .chat-bubble:nth-child(3) {
+            animation-delay: 2.5s;
+        }
+
+        .chat-bubble:nth-child(4) {
+            animation-delay: 3.5s;
+        }
+
+        .chat-bubble:nth-child(5) {
+            animation-delay: 4.5s;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <!-- Phone Frame -->
+    <div
+        class="bg-white rounded-[3rem] shadow-xl w-full max-w-md h-[700px] overflow-hidden border-8 border-gray-800 relative">
+        <!-- Dynamic Island -->
+        <div
+            class="absolute top-2 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-[20px] flex items-center justify-center z-10">
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span class="text-white text-xs">9:41</span>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="bg-black pt-10 pb-2 px-4 flex justify-between items-center text-white">
+            <div class="text-sm">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi ml-1"></i>
+            </div>
+            <div class="text-sm">
+                <i class="fas fa-battery-full"></i>
+                <span class="ml-1">100%</span>
+            </div>
+        </div>
+
+        <!-- Chat Header -->
+        <div class="bg-blue-500 p-4 text-white shadow-md">
+            <h1 class="text-xl font-bold text-center">Cara Menjadi Anggota</h1>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="h-[500px] overflow-y-auto p-4 space-y-4">
+            <!-- Bot Messages -->
+            <div class="flex items-start space-x-2 mb-4 chat-bubble">
+                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                    M
+                </div>
+                <div class="bg-gray-100 rounded-lg p-3 max-w-[80%]">
+                    <p>Tahukah kamu? kalau kamu juga bisa menjadi anggota koperasi loh, Mau tau caranya?Begini caranya ⏬
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-start space-x-2 mb-4 chat-bubble">
+                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                    M
+                </div>
+                <div class="bg-gray-100 rounded-lg p-3 max-w-[80%]">
+                    <p class="font-bold mb-2">Cara menjadi Anggota Koperasi:</p>
+                    <ul class="list-disc ml-4 space-y-2">
+                        <li>Jika ingin menjadi anggota koperasi, maka harus menjadi karyawan tetap.</li>
+                        <li>Setelah itu apabila ingin menjadi anggota koperasi, maka harus mengisi formulir keanggotaan
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex items-start space-x-2 mb-4 chat-bubble">
+                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                    M
+                </div>
+                <div class="bg-gray-100 rounded-lg p-3 max-w-[80%]">
+                    <p>Jadi, seperti itu ya teman-teman jika ingin menjadi anggota koperasi.</p>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="space-y-3 chat-bubble">
+                <button onclick="window.location.href='keuntungan.html'"
+                    class="w-full bg-blue-500 p-4 rounded-xl shadow-md hover:bg-blue-600 transition-all duration-300 text-white text-left">
+                    Keuntungan Menjadi Anggota
+                </button>
+
+                <button onclick="window.location.href='menu.html'"
+                    class="w-full bg-blue-500 p-4 rounded-xl shadow-md hover:bg-blue-600 transition-all duration-300 flex items-center justify-center text-white">
+                    🏠 Menu Utama
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
